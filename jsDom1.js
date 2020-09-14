@@ -23,7 +23,6 @@ if(name.length <= 1)
 // Cookies
 
     let form = function createCookie() {
-        debugger;
         let name = document.getElementById('name').value;
         let date = document.getElementById('date').value;
         let value = 42;
