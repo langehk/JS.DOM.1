@@ -1,16 +1,18 @@
 "use strict";
 
 function validateForm(){
-
+    debugger;
     let name = document.getElementById("name").value;
-    let date = document.getElementById("date").value;
-    let submitBtn = document.getElementsById("submitBtn");
+    name.toString();
+
 /*
 Vi validerer ikke datoen, grundet det er valideret gennem type="date"
 */
 
+
 if(name.length <= 1)
 {
+    debugger;
     alert("Dit navn er for kort.");
     return false;
 }
