@@ -22,17 +22,24 @@ if(name.length <= 1)
 
 // Cookies
 
-    let form = function createCookie() {
-        let name = document.getElementById('name').value;
-        let date = document.getElementById('date').value;
-        let value = 42;
-        let tenMinExp = 0.00694444;
-        let expires = "; expires=" + tenMinExp;
-        document.cookie = name + date + "=" + value + expires + "; path=/";
+    let cookie = function createCookie(name, value, minutes) {
+        let expires;
+        name = document.getElementById('name').value;
+        let birthDate = document.getElementById('date').value;
+        value = 42;
+        minutes = 10;
+
+        let date = new Date();
+
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+        
+         // = "; expires=" + tenMinExp;
+        document.cookie = name + birthDate + "=" + value + expires + "; path=/";
     }
 
 
-    submitBtn.addEventListener("click", form);
+    submitBtn.addEventListener("click", cookie);
 
 
 function readCookie(name) {
